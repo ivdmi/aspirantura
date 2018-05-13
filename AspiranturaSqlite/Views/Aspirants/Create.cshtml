@@ -1,0 +1,69 @@
+﻿@model AspiranturaSqlite.Models.Aspirant
+
+<h4>Aspirant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surename" class="control-label"></label>
+                <input asp-for="Surename" class="form-control" />
+                <span asp-validation-for="Surename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patronymic" class="control-label"></label>
+                <input asp-for="Patronymic" class="form-control" />
+                <span asp-validation-for="Patronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Birthday" class="control-label"></label>
+                <input asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InputDate" class="control-label"></label>
+                <input asp-for="InputDate" class="form-control" />
+                <span asp-validation-for="InputDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProtectionDate" class="control-label"></label>
+                <input asp-for="ProtectionDate" class="form-control" />
+                <span asp-validation-for="ProtectionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Protection" /> @Html.DisplayNameFor(model => model.Protection)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course" class="control-label"></label>
+                <input asp-for="Course" class="form-control" />
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatustypeId" class="control-label"></label>
+                <select asp-for="StatustypeId" class ="form-control" asp-items="ViewBag.StatustypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialityId" class="control-label"></label>
+                <select asp-for="SpecialityId" class ="form-control" asp-items="ViewBag.SpecialityId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

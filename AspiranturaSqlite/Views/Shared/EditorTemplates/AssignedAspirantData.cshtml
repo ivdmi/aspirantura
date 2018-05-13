@@ -1,0 +1,29 @@
+﻿@model AspiranturaSqlite.Models.ViewModels.AssignedAspirantData
+
+<fieldset class="col-md-12">
+    @Html.HiddenFor(model => model.Id)
+    <div class="col-md-1">
+        @Html.CheckBoxFor(model => model.Assigned)    
+        @Html.CheckBoxFor(model => model.StationaryForm)    
+        @Html.CheckBoxFor(model => model.DayForm)    
+        @Html.CheckBoxFor(model => model.Budget)
+    </div>
+    <div class="col-md-5">
+        @Html.DisplayFor(model => model.Surename)
+        @Html.DisplayFor(model => model.Name)
+        @Html.DisplayFor(model => model.Patronymic)
+    </div>
+
+    @*<div class="col-md-1">
+        @Html.DisplayFor(model => model.Course)
+    </div>
+    <div class="col-md-1">
+        @Html.DisplayFor(model => model.InputDate)
+    </div>
+    <div class="col-md-3">
+        @Html.DisplayFor(model => model.StatusName)
+    </div>
+    <div class="col-md-1">
+        @Html.DisplayFor(model => model.ProtectionDate)
+    </div>*@
+</fieldset>

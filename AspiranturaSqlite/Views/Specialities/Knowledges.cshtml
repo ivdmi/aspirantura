@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AspiranturaSqlite.Models.Knowledge>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@(Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Name).Titled("Наименование");
+            columns.Add(model => model.Id).Titled("Шифр");
+
+        })
+        .Empty("No data found")
+    
+        //.MultiFilterable()
+        .Filterable()
+
+        .Pageable(pager =>
+        {
+            pager.PageSizes = new Dictionary<Int32, String > { { 20, "20" }, { 40, "40" }, { 0, "All" } };
+            pager.ShowPageSizes = true;
+            pager.PagesToDisplay = 5;
+            pager.CurrentPage = 1;
+            pager.RowsPerPage = 2;
+        })
+)
+
+@*<script>
+    $('.mvc-grid').mvcgrid();
+</script>*@
+
+

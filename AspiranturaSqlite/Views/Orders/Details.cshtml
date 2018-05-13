@@ -1,0 +1,36 @@
+﻿@model AspiranturaSqlite.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Наказ № @Html.DisplayFor(model => model.Number) від @Html.DisplayFor(model => model.Date)</h4>
+    <hr />
+    <dl class="dl-horizontal">        
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderType.Name)
+        </dd>
+                                                                                                            @*Custom*@
+        <dt>
+            Аспіранти
+        </dt>
+        <dd>
+            @{
+                int i = 0;
+                foreach (var aspirant in Model.AsppirantOrders)
+                {
+                    i = i + 1;
+                    @:@i. @aspirant.Aspirant.Surename @aspirant.Aspirant.Name @aspirant.Aspirant.Patronymic<br />
+                }
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

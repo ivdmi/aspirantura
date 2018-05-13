@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Статистика - групування";
+}
+<h2>@ViewData["Title"]</h2>
+
+@model IEnumerable<AspiranturaSqlite.Models.ViewModels.KnowledgeInfoGroup>
+
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialityCount)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Number
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.SpecialityCount
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
